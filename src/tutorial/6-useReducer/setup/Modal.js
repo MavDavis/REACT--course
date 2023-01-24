@@ -1,7 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
-const Modal = () => {
-  return <div>i'm modal</div>;
+const Modal = ({ value, removeModal, isModal }) => {
+useEffect(()=>{
+  setTimeout(() => {
+    removeModal()
+  }, 3000);
+},[])
+  return (
+    <div>
+      <p onClick={removeModal}>{value}</p>
+    </div>
+  );
 };
 
 export default Modal;
